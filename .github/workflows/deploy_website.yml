@@ -1,3 +1,12 @@
+on:
+  workflow_dispatch:
+    inputs:
+      trig-dry-run:
+        description: Don't do anything real
+        required: false
+        default: false
+        type: boolean
+
 name: Deploy website on user request
 
 jobs:
@@ -14,3 +23,5 @@ jobs:
       with:
         server: linux208.unoeuro.com
         username: vanessa-nf.dk
+        password: ${{ secrets.ftp_password }}
+        dry-run: ${{ inputs.trig-dry-run }}
