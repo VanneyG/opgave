@@ -1,0 +1,16 @@
+name: Deploy website on user request
+
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v3
+
+    - name: Push files
+      uses: SamKirkland/FTP-Deploy-Actions@v4.3.6
+      with:
+        server: linux208.unoeuro.com
+        username: vanessa-nf.dk
