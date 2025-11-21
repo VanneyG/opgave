@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Push files
-      uses: SamKirkland/FTP-Deploy-Actions@v4.3.6
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
       with:
         server: linux208.unoeuro.com
         username: vanessa-nf.dk
